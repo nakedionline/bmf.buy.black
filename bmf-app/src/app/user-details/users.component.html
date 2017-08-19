@@ -1,0 +1,32 @@
+<!--<div>
+  <label>Member name:</label><input #userName/>
+  <button (click)="add(userName.value); userName.value=''"></button>
+</div>-->
+
+<div id="cu"  class="container spacer about">
+
+<div *ngIf="selectedUser"></div>
+
+  <h2 class="text-center wowload fadeInUp">Company Profile</h2>
+  <div class="row">
+    <div class="col-sm-6 wowload fadeInLeft">
+      <ul class="users">
+        <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
+          <span class="badge">{{user.id}}</span> {{user.name}}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="selectedUser">
+      <h4><i class="fa fa-user"></i> Passion</h4>
+      <div class="col-sm-6 animated fadeInRightBig" style="background: rgba(225, 225, 225, .8)">
+      <h4>
+       <b><u>{{selectedUser.name | uppercase}}</u></b>
+      </h4>
+        <p>Status : Active</p>
+        <p>Since : 12 August 2003</p>
+        <p>Credits : 1000</p>
+      </div>
+       <p><button (click)="gotoDetail()">View Details</button></p>
+    </div>
+  </div>
+</div>

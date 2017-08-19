@@ -1,0 +1,20 @@
+<div id="cu"  class="container spacer">
+<h3>Top Members</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let user of users"  [routerLink]="['/detail', user.id]"  class="col-1-4">
+     <div class="module user">
+         <h4>{{user.name}}</h4>
+     </div>
+  </a>
+</div>
+</div>
+<!--<div id="works"  class=" clearfix grid col-1-4">
+  <figure class="effect-oscar  wowload fadeInUp">
+    <img src="./assets/images/portfolio/1.jpg" alt="img01"/>
+    <figcaption>
+      <h2>Nature</h2>
+      <p>Lily likes to play with crayons and pencils<br>
+        <a href="./assets/images/portfolio/1.jpg" title="1" data-gallery>View more</a></p>
+    </figcaption>
+  </figure>
+</div>-->
