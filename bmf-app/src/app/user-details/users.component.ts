@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {User} from '../services/user';
@@ -9,9 +9,12 @@ import {UserService} from '../services/user.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent implements OnInit{
   users: User[];
   selectedUser: User;
+  showSearchDiv: boolean = false;
+  nameLabel: string = 'Search Service';
 
   constructor(
     private router: Router,
@@ -36,6 +39,18 @@ export class UsersComponent implements OnInit{
 
   onSelect(user: User): void{
     this.selectedUser = user;
+  }
+
+  onSearchUser(): void{
+    if('Search Service' == this.nameLabel){
+      this.nameLabel = 'Done';
+      this.showSearchDiv = true;
+    }
+    else {
+      this.nameLabel = 'Search Service';
+      this.showSearchDiv = false;
+
+    }
   }
 
   gotoDetail(): void {
