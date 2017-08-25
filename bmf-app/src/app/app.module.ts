@@ -13,6 +13,10 @@ import {InMemoryDataService} from './services/in-memory-data.service';
 import {LandingComponent} from './landing.component';
 import {AboutUsComponent} from './about-us.component';
 import {ContactUsComponent} from './contact-us.component';
+import {UserRegistrationComponent} from './create-user/user-registration.component';
+import {ShareholdersRegistrationComponent} from './create-user/capture-shareholders.component';
+import {CompanyRegistrationComponent} from './create-user/capture-company.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import {ContactUsComponent} from './contact-us.component';
     DashboardComponent,
     LandingComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    UserRegistrationComponent,
+    ShareholdersRegistrationComponent,
+    CompanyRegistrationComponent
   ],
   imports: [
     BrowserModule,
