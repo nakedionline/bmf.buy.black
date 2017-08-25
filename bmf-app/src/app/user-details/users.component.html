@@ -9,9 +9,14 @@
   <div class="row">
     <br>
     <br>
+    <div *ngIf="showSearchDiv" class="col-sm-12 text-center">
+      <input type="text" placeholder="Search..."/>
+      <br>
+      <br>
+    </div>
     <div class="col-sm-12 text-center search">
       <div class="col-sm-4"></div>
-        <div id="search" *ngIf="showSearchDiv"  class=" col-sm-4container" style="background: rgba(225, 225, 225, .8)">
+      <div id="search" *ngIf="showSearchDiv"  class=" col-sm-4container" style="background: rgba(225, 225, 225, .8)">
           <table>
             <thead>
               <tr><th>ID</th><th>Company Name</th></tr>
