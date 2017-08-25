@@ -14,10 +14,10 @@
         <div id="search" *ngIf="showSearchDiv"  class=" col-sm-4container" style="background: rgba(225, 225, 225, .8)">
           <table>
             <thead>
-              <tr><th colspan="2">Company Service Results</th></tr>
+              <tr><th>ID</th><th>Company Name</th></tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of users">
+              <tr *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
                 <td>{{user.id}}</td>
                 <td>{{user.name}}</td>
               </tr>
@@ -31,34 +31,22 @@
 </div>
 
 <div id="cu"  class="container spacer user">
-
-  <br>
-  <br>
-
-  <h2 class="text-center wowload fadeInUp">Company Profile</h2>
-
-
   <div *ngIf="selectedUser"></div>
-
   <div class="row">
-    <div class="col-sm-6 wowload fadeInLeft">
-      <ul class="users">
-        <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
-          <span class="badge">{{user.id}}</span> {{user.name}}
-        </li>
-      </ul>
-    </div>
     <div *ngIf="selectedUser">
-      <h4><i class="fa fa-user"></i> Passion</h4>
-      <div class="col-sm-6 animated fadeInRightBig" style="background: rgba(225, 225, 225, .8)">
+      <h2 class="text-center wowload fadeInUp">Company Profile</h2>
+
+      <div class="col-sm-12 animated fadeInRightBig" style="background: rgba(225, 225, 225, .8)">
       <h4>
        <b><u>{{selectedUser.name | uppercase}}</u></b>
       </h4>
         <p>Status : Active</p>
         <p>Since : 12 August 2003</p>
-        <p>Credits : 1000</p>
+        <p>Rating : <i class="fa fa-star"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i> </p>
       </div>
-       <p><button (click)="gotoDetail()">View Details</button></p>
+      <div class="col-sm-3"><p><button class="btn btn-primary" (click)="gotoDetail()"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;View Details</button></p></div>
+      <div class="col-sm-3"></div>
+       <div class="col-sm-3"></div>
     </div>
   </div>
 </div>
