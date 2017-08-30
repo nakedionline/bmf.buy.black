@@ -13,7 +13,7 @@ import {UserService} from '../services/user.service';
 export class UsersComponent implements OnInit{
   users: User[];
   selectedUser: User;
-  showSearchDiv: boolean = false;
+  showSearchDiv: boolean = true;
   nameLabel: string = 'Search Service';
 
   constructor(
