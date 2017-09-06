@@ -16,7 +16,7 @@ import {ContactUsComponent} from './contact-us.component';
 import {UserRegistrationComponent} from './create-user/user-registration.component';
 import {ShareholdersRegistrationComponent} from './create-user/capture-shareholders.component';
 import {CompanyRegistrationComponent} from './create-user/capture-company.component';
-
+import  {UploadDocumentsComponent} from './create-user/upload-documents.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,9 @@ import {CompanyRegistrationComponent} from './create-user/capture-company.compon
     ContactUsComponent,
     UserRegistrationComponent,
     ShareholdersRegistrationComponent,
-    CompanyRegistrationComponent
+    CompanyRegistrationComponent,
+    UploadDocumentsComponent
+
   ],
   imports: [
     BrowserModule,
