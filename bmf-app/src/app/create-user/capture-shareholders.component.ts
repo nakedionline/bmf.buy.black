@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'shareholders',
@@ -7,6 +8,11 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class ShareholdersRegistrationComponent implements OnInit{
-  constructor(){}
+
+  constructor(private router: Router){}
   ngOnInit(){}
+
+  gotoCompany(): void {
+    this.router.navigate(['/company']);
+  }
 }
