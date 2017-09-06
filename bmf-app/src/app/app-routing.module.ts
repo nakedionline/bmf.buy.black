@@ -9,7 +9,7 @@ import {ContactUsComponent} from "./contact-us.component";
 import {UserRegistrationComponent} from './create-user/user-registration.component';
 import {ShareholdersRegistrationComponent} from './create-user/capture-shareholders.component';
 import {CompanyRegistrationComponent} from './create-user/capture-company.component';
-
+import {UploadDocumentsComponent} from './create-user/upload-documents.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,8 @@ const routes: Routes = [
   {path: 'contact',       component: ContactUsComponent},
   {path: 'register',      component: UserRegistrationComponent},
   {path: 'shareholders',  component: ShareholdersRegistrationComponent},
-  {path: 'company',       component: CompanyRegistrationComponent}
+  {path: 'company',       component: CompanyRegistrationComponent},
+  {path: 'upload',        component: UploadDocumentsComponent}
 ];
 
 @NgModule({
