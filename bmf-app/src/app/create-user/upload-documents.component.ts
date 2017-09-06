@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'upload',
@@ -7,6 +8,22 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class UploadDocumentsComponent implements OnInit{
-  constructor(){}
+  @ViewChild('fileInput') fileInput;
+
+  constructor(private router: Router){}
   ngOnInit(){}
+
+  doUpload(){
+
+    let fileBrowser = this.fileInput.nativeElement;
+
+    if(fileBrowser.files && fileBrowser.files[0]){
+      const formData = new FormData();
+
+      formData.append("image", fileBrowser.files[0]);
+      //do stuff from the Service to upload file
+    }
+
+  }
+
 }
