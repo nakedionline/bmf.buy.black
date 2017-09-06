@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'company',
@@ -7,6 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class CompanyRegistrationComponent implements OnInit{
-  constructor(){}
+  constructor(private router: Router){}
   ngOnInit(){}
+
+  gotoUpload(): void {
+    this.router.navigate(['/upload']);
+  }
 }
