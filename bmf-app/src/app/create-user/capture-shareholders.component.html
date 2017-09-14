@@ -1,46 +1,70 @@
 <!-- Capture Shareholders -->
 <div id="userRegistration"  class="container spacer create">
-  <div class="registration ">
-    <h3 class="text-center wowload fadeInUp">Company Registration</h3>
-  <div class="row">
-    <div class="col-sm-4">
-      <h5><i class="fa fa-user"></i><span><b>&nbsp;&nbsp;&nbsp;Step 1: Capture shareholder(s) / owner(s) info</b></span></h5>
-    </div>
-    <div class="col-sm-4">
-      <h5><i class="fa fa-building"></i><b>&nbsp;&nbsp;&nbsp;Step 2: Capture company details  </b></h5>
-    </div>
-    <div class="col-sm-4">
-      <h5><i class="fa fa-file-text"></i><b>&nbsp;&nbsp;&nbsp;Step 3: Upload supporting documents</b></h5>
-    </div>
-  </div>
-    <br>
-    <br>
-  <div class="row">
-    <div class="col-sm-12">
-    <div class="col-sm-4"><input type="text" placeholder="Title"></div>
-    <div class="col-sm-4">
-      <input type="text" placeholder="Name">
-    </div>
-    <div class="col-sm-4">
-      <input type="text" placeholder="Surname">
-    </div>
-    <div class="col-sm-4"><input type="text" placeholder="Position"></div>
-    <div class="col-sm-4">
-      <input type="text" placeholder="ID Number">
-    </div>
-    <div class="col-sm-4">
-      <select type="text" placeholder="Gender">
-        <option value="option-1">Gender</option>
-        <option value="option-1">Male</option>
-        <option value="option-2">Female</option>
-      </select>
-    </div>
-   </div>
-  </div>
-   <div class="row">
-     <div class="col-sm-4"></div>
-     <div class="col-sm-4"><p><button class="btn btn-primary" (click)="gotoCompany()"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;Continue</button></p></div>
-     <div class="col-sm-4"></div>
-   </div>
+  <div class="registration">
+    <form (ngSubmit)="gotoCompany()" #registerForm="ngForm">
+      <h3 class="text-center wowload fadeInUp">Company Registration</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <h5><i class="fa fa-user"></i><span><b>&nbsp;&nbsp;&nbsp;Step 1: Capture shareholder(s) / owner(s) info</b></span></h5>
+        </div>
+        <div class="col-sm-4">
+          <h5><i class="fa fa-building"></i><b>&nbsp;&nbsp;&nbsp;Step 2: Capture company details  </b></h5>
+        </div>
+        <div class="col-sm-4">
+          <h5><i class="fa fa-file-text"></i><b>&nbsp;&nbsp;&nbsp;Step 3: Upload supporting documents</b></h5>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">Personal Details<br><br></div>
+        <div class="col-sm-12">
+          <div class="col-sm-4">
+            <input class="form-control" [(ngModel)]="model.usertitle" type="text" id="title" name="title" minlength="2" placeholder="Title" required>
+          </div>
+
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="name" [(ngModel)]="model.username" name="name" placeholder="Name" #name="ngModel" required>
+            <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="name.errors.required">
+              Name is required.
+               </div>
+               <div *ngIf="name.errors.minlength">
+                 Name must be at least 4 characters long.
+               </div>
+               <div *ngIf="name.errors.forbiddenName">
+                 Name cannot be Bob.
+               </div>
+
+            </div>-->
+          </div>
+
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="model.usersurname" placeholder="Surname" required>
+          </div>
+          <div class="col-sm-4"><input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.userposition"  placeholder="Position" required></div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control"  id="idnumber" name="idnumber" [(ngModel)]="model.useridnumber" placeholder="ID Number" required>
+          </div>
+          <div class="col-sm-4">
+            <select class="form-control" id="gender" name="gender" [(ngModel)]="model.userservice" required>
+              <option value="G">Gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            <!--  <option *ngFor="let service of services" [value]="service">{{service}}</option>-->
+            </select>
+          </div>
+         <!-- {{diagnostic}}{{submitted}}-->
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><p><button type="submit" class="btn btn-primary" [disabled]="!registerForm.form.valid"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;Continue</button></p></div>
+        <div class="col-sm-4"></div>
+      </div>
+    </form>
   </div>
 </div>
