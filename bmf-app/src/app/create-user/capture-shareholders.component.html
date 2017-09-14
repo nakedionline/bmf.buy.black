@@ -21,6 +21,7 @@
         <div class="col-sm-12">
           <div class="col-sm-4">
             <input class="form-control" [(ngModel)]="model.usertitle" type="text" id="title" name="title" minlength="2" placeholder="Title" required>
+            <div  class="alert" *ngIf="!registerForm.controls['title'].valid && (registerForm.controls['title'].dirty ||registerForm.controls['title'].touched)">Title Required</div>
           </div>
 
           <div class="col-sm-4">
@@ -38,14 +39,25 @@
                </div>
 
             </div>-->
+            <div class="alert" *ngIf="!registerForm.controls['name'].valid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)">Name Required</div>
+
           </div>
 
           <div class="col-sm-4">
             <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="model.usersurname" placeholder="Surname" required>
+            <div class="alert" *ngIf="!registerForm.controls['surname'].valid && (registerForm.controls['surname'].dirty || registerForm.controls['surname'].touched)">Surname Required</div>
           </div>
-          <div class="col-sm-4"><input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.userposition"  placeholder="Position" required></div>
+          <!--<div  class="alert col-sm-4" *ngIf="!registerForm.controls['title'].valid && registerForm.controls['title'].touched">Title Required</div>-->
+          <!--<div class="alert col-sm-4" *ngIf="!registerForm.controls['name'].valid && registerForm.controls['name'].touched">Name Required</div>-->
+         <!-- <div class="alert" *ngIf="!registerForm.controls['surname'].valid && registerForm.controls['surname'].touched">Surname Required</div>-->
+
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.userposition"  placeholder="Position" required>
+            <div class="alert" *ngIf="!registerForm.controls['position'].valid && (registerForm.controls['position'].dirty || registerForm.controls['position'].touched)">Position Required</div>
+          </div>
           <div class="col-sm-4">
             <input type="text" class="form-control"  id="idnumber" name="idnumber" [(ngModel)]="model.useridnumber" placeholder="ID Number" required>
+            <div class="alert" *ngIf="!registerForm.controls['idnumber'].valid && (registerForm.controls['idnumber'].dirty || registerForm.controls['idnumber'].touched)">ID Number Required</div>
           </div>
           <div class="col-sm-4">
             <select class="form-control" id="gender" name="gender" [(ngModel)]="model.userservice" required>
