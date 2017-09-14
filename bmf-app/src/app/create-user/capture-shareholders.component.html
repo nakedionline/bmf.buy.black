@@ -47,10 +47,6 @@
             <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="model.usersurname" placeholder="Surname" required>
             <div class="alert" *ngIf="!registerForm.controls['surname'].valid && (registerForm.controls['surname'].dirty || registerForm.controls['surname'].touched)">Surname Required</div>
           </div>
-          <!--<div  class="alert col-sm-4" *ngIf="!registerForm.controls['title'].valid && registerForm.controls['title'].touched">Title Required</div>-->
-          <!--<div class="alert col-sm-4" *ngIf="!registerForm.controls['name'].valid && registerForm.controls['name'].touched">Name Required</div>-->
-         <!-- <div class="alert" *ngIf="!registerForm.controls['surname'].valid && registerForm.controls['surname'].touched">Surname Required</div>-->
-
           <div class="col-sm-4">
             <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.userposition"  placeholder="Position" required>
             <div class="alert" *ngIf="!registerForm.controls['position'].valid && (registerForm.controls['position'].dirty || registerForm.controls['position'].touched)">Position Required</div>
