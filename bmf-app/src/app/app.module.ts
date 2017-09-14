@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import {UserDetailComponent} from './user-details/user-detail.component';
 import {UsersComponent} from './user-details/users.component';
@@ -36,6 +36,7 @@ import  {UploadDocumentsComponent} from './create-user/upload-documents.componen
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     HttpModule
