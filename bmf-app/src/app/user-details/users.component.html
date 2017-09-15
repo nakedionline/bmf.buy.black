@@ -30,12 +30,14 @@
       <div id="search" *ngIf="showSearchDiv"  class=" col-sm-4container" style="background: rgba(225, 225, 225, .8)">
           <table>
             <thead>
-              <tr><th>Reg No</th><th>Company Name</th></tr>
+              <tr><th>Reg No</th><th>Company Name</th><th>Category</th><th>Tax No</th></tr>
             </thead>
             <tbody>
               <tr *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
-                <td>{{user.id}}</td>
-                <td>{{user.name}}</td>
+                <td>{{user.companyRegNo}}</td>
+                <td>{{user.companyName}}</td>
+                <td>{{user.businessType}}</td>
+                <td>{{user.companyTaxNo}}</td>
               </tr>
             </tbody>
           </table>

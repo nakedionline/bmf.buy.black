@@ -2,8 +2,8 @@ import 'rxjs/add/operator/switchMap';
 import {Component, OnInit}       from '@angular/core';
 import {ActivatedRoute,ParamMap} from '@angular/router';
 import {Location}                from '@angular/common';
-
-import {User} from '../services/user';
+import {Company}                 from '../services/company';
+//import {User} from '../services/user';
 import {UserService} from '../services/user.service';
 @Component({
   selector: 'user-detail',
@@ -12,7 +12,7 @@ import {UserService} from '../services/user.service';
 })
 
 export class UserDetailComponent implements OnInit{
-  user: User;
+  user: Company;
 
   constructor(
     private userService: UserService,

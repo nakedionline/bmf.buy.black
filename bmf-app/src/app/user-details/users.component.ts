@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import {User} from '../services/user';
 import {UserService} from '../services/user.service';
+import {Company} from '../services/company';
 
 @Component({
   selector: 'my-users',
@@ -11,8 +12,8 @@ import {UserService} from '../services/user.service';
 })
 
 export class UsersComponent implements OnInit{
-  users: User[];
-  selectedUser: User;
+  users: Company[];
+  selectedUser: Company;
   showSearchDiv: boolean = true;
   nameLabel: string = 'Search Service';
 
@@ -26,18 +27,18 @@ export class UsersComponent implements OnInit{
     this.userService.getUsers().then(users => this.users = users);
   }
 
-  add(name:string): void {
+  /*add(name:string): void {
     name = name.trim();
     if(!name){return;}
     this.userService.create(name).then(user => {this.users.push(user)});
     this.selectedUser = null;
-  }
+  }*/
 
   ngOnInit(): void {
     this.getUsers();
   }
 
-  onSelect(user: User): void{
+  onSelect(user: Company): void{
     this.selectedUser = user;
   }
 
