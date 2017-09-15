@@ -8,6 +8,4 @@ export const USERS: User[] = [
   {id: 15, name: 'Top Cake and Bakery'},
   {id: 16, name: 'Chuck Taylor Roofing'},
   {id: 17, name: 'Zakheni Environmental Services'}*/
-  
-
 ];
