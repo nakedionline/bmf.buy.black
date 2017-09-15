@@ -13,7 +13,7 @@ export class ShareholdersRegistrationComponent {
 
   name: string;
   services: Array<string>;
-  model = new User(18,'Dr','Peter','Lord','Head',78,'Male','Service');
+  model = new User(18,7800,'Dr','Peter','Lord','Head',650321,'Service');
 
   submitted = false;
 
