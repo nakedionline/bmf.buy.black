@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../services/user';
+//import { User } from '../services/user';
+import {Company} from '../services/company';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from '../services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  users: User[] = [];
+  users: Company[] = [];
 
   constructor(private userService: UserService) { }
 
