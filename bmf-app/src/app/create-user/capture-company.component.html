@@ -1,6 +1,7 @@
 <!-- Capture Shareholders -->
 <div id="userRegistration"  class="container spacer create">
   <div class="registration ">
+    <form (ngSubmit)="gotoUpload()" #registerForm="ngForm">
     <h3 class="text-center wowload fadeInUp">Company Registration</h3>
     <div class="row">
       <div class="col-sm-4">
@@ -17,26 +18,37 @@
     <br>
     <div class="row">
       <div class="col-sm-12">
-        <div class="col-sm-4"><input type="text" placeholder="Company RegNo."></div>
         <div class="col-sm-4">
-          <input type="text" placeholder="Company Name">
+          <input type="text" id="regno" name="regno" class="form-control" [(ngModel)]="model.companyRegNo" placeholder="Company RegNo." required>
+          <div class="alert" *ngIf="!registerForm.controls['regno'].valid && (registerForm.controls['regno'].dirty || registerForm.controls['regno'].touched)">Company RegNo. Required</div>
         </div>
         <div class="col-sm-4">
-          <input type="text" placeholder="Registered TaxNo.">
-        </div>
-        <div class="col-sm-4"><input type="text" placeholder="Physical Address"></div>
-        <div class="col-sm-4">
-          <input type="text" placeholder="City">
+          <input type="text" id="companyname" name="companyname" class="form-control" [(ngModel)]="model.companyName" placeholder="Company Name" required>
+          <div class="alert" *ngIf="!registerForm.controls['companyname'].valid && (registerForm.controls['companyname'].dirty || registerForm.controls['companyname'].touched)">Company Name Required</div>
         </div>
         <div class="col-sm-4">
-          <input type="text" placeholder="Postal Code">
+          <input type="text" id="taxnumber" name="taxnumber" class="form-control" [(ngModel)]="model.companyTaxNo" placeholder="Registered TaxNo." required>
+          <div class="alert" *ngIf="!registerForm.controls['taxnumber'].valid && (registerForm.controls['taxnumber'].dirty || registerForm.controls['taxnumber'].touched)">Registered TaxNo. Required</div>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" id="physicaladdress" name="physicaladdress" [(ngModel)]="model.physicalAddress" class="form-control" placeholder="Physical Address" required>
+          <div class="alert" *ngIf="!registerForm.controls['physicaladdress'].valid && (registerForm.controls['physicaladdress'].dirty || registerForm.controls['physicaladdress'].touched)">Physical Address Required</div>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="city" name="city" [(ngModel)]="model.city" placeholder="City" required>
+          <div class="alert" *ngIf="!registerForm.controls['city'].valid && (registerForm.controls['city'].dirty || registerForm.controls['city'].touched)">City Required</div>
+        </div>
+        <div class="col-sm-4">
+          <input id="" type="text" id="postalcode" name="postalcode" class="form-control" [(ngModel)]="model.postalCode" placeholder="Postal Code" required>
+          <div class="alert" *ngIf="!registerForm.controls['postalcode'].valid && (registerForm.controls['postalcode'].dirty || registerForm.controls['postalcode'].touched)">Postal Code Required</div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-4"></div>
-      <div class="col-sm-4"><p><button class="btn btn-primary" (click)="gotoUpload()"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;Continue</button></p></div>
+      <div class="col-sm-4"><p><button class="btn btn-primary" [disabled]="!registerForm.form.valid"><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;Continue</button></p></div>
       <div class="col-sm-4"></div>
     </div>
+      </form>
   </div>
 </div>
